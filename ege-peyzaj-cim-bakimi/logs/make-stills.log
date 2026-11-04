@@ -1,0 +1,14 @@
+# make.py stills · 2026-11-04 19:21:22
+
+$ node /home/user/crm/ege-peyzaj-cim-bakimi/tools/capture.mjs --url film.html --probe --params w=1080&h=1920
+[capture] renderer: canvas2d
+[capture] page: 1080x1920, 480 frames @ 24 fps
+[capture] meta: {"title":"Tek Bir Çizgi","bounds":[0,2.5,6,10.5,13,16,20],"vo":0,"palette":{"bg":"#F2E8D5","ink":"#2B2622","accent":"#C8643B","dim":"#B9AC93","lawn":"#6F9A3C","lawnDry":"#B3A45C","terra":"#C8643B","sea":"#3E9CA6","mustard":"#D9A53B","olive":"#7E8C5A","stone":"#D8CBB0","shadow":"#CDBF9F","rain":"#8FA6AE"},"lookPalette":{"bg":"#efe6d6","ink":"#1f1d1a","accent":"#d6402f","dim":"#7d8b8f"},"families":["Alfa Slab One","Jost"],"sfx":[]}
+
+$ node /home/user/crm/ege-peyzaj-cim-bakimi/tools/capture.mjs --url film.html --out /home/user/crm/ege-peyzaj-cim-bakimi/review/stills-5 --frames 110,180,235 --format jpeg --quality 0.9 --params w=540&h=960
+[capture] renderer: canvas2d
+[capture] page: 540x960, 480 frames @ 24 fps
+[capture] done: 3 rendered, 0 skipped, 0.9 s total, 3.37 fps, 1 worker(s)
+[capture] frames: /home/user/crm/ege-peyzaj-cim-bakimi/review/stills-5/%06d.jpg
+
+$ ffmpeg -hide_banner -nostdin -loglevel error -y -f concat -safe 0 -i /home/user/crm/ege-peyzaj-cim-bakimi/review/stills-5/frames.txt -vf scale=337:-2,pad=341:ih+4:2:2:black,tile=3x1 -frames:v 1 -update 1 -q:v 4 /home/user/crm/ege-peyzaj-cim-bakimi/review/stills-5.jpg

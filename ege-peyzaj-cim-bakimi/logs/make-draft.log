@@ -1,0 +1,108 @@
+# make.py draft · 2026-11-04 19:22:09
+
+$ node /home/user/crm/ege-peyzaj-cim-bakimi/tools/capture.mjs --url film.html --probe --params w=1080&h=1920
+[capture] renderer: canvas2d
+[capture] page: 1080x1920, 480 frames @ 24 fps
+[capture] meta: {"title":"Tek Bir Çizgi","bounds":[0,2.5,6,10.5,13,16,20],"vo":0,"palette":{"bg":"#F2E8D5","ink":"#2B2622","accent":"#C8643B","dim":"#B9AC93","lawn":"#6F9A3C","lawnDry":"#B3A45C","terra":"#C8643B","sea":"#3E9CA6","mustard":"#D9A53B","olive":"#7E8C5A","stone":"#D8CBB0","shadow":"#CDBF9F","rain":"#8FA6AE"},"lookPalette":{"bg":"#efe6d6","ink":"#1f1d1a","accent":"#d6402f","dim":"#7d8b8f"},"families":["Alfa Slab One","Jost"],"sfx":[[0,"foley",null],[0.6,"foley",null],[1.2,"foley",null],[0.9,"tick",null],[1.9,"foley",null],[2.25,"whoosh",0.5],[3.1,"foley",null],[3.35,"foley",null],[3.5,"tick",null],[3.7,"foley",null],[6.3,"foley",null],[6.58,"foley",null],[6.86,"foley",null],[7.14,"foley",null],[7.42,"foley",null],[7.7,"foley",null],[7.98,"foley",null],[8.26,"foley",null],[8.54,"foley",null],[8.3,"foley",null],[9.7,"tick",null],[10.5,"foley",null],[10.8,"foley",null],[11.25,"foley",null],[11.7,"foley",null],[12.15,"foley",null],[13.2,"foley",null],[14,"foley",null],[14.3,"foley",null],[14.5,"tick",null],[15.5,"riser",0.5],[16.85,"hit",null],[17.5,"tick",null]]}
+
+$ node /home/user/crm/ege-peyzaj-cim-bakimi/tools/capture.mjs --url film.html --video /home/user/crm/ege-peyzaj-cim-bakimi/renders/draft-picture-v1.mp4 --audio /home/user/crm/ege-peyzaj-cim-bakimi/audio/film.wav --workers 2 --format jpeg --quality 0.85 --maxrate 4M --params w=540&h=960&shutter=0&weave=0&tone=0 --status /home/user/crm/ege-peyzaj-cim-bakimi/renders/draft.status.json
+[capture] renderer: canvas2d
+[capture] page: 540x960, 480 frames @ 24 fps
+[capture] audio: /home/user/crm/ege-peyzaj-cim-bakimi/audio/film.wav (20.000 s, 48000 Hz, 2 ch, 32-bit float, peak -3.0 dBFS, 4.2 s)
+[capture] 147/480 frames (0 skipped) - 14.3 fps
+[capture] 440/480 frames (0 skipped) - 28.8 fps
+[capture] done: 480 rendered, 0 skipped, 17.2 s total, 27.85 fps, 2 worker(s)
+[capture] video: /home/user/crm/ege-peyzaj-cim-bakimi/renders/draft-picture-v1.mp4 (480 frames @ 24 fps, no audio yet)
+
+$ /usr/local/bin/python3 /home/user/crm/ege-peyzaj-cim-bakimi/tools/master_audio.py /home/user/crm/ege-peyzaj-cim-bakimi/audio/film.wav /home/user/crm/ege-peyzaj-cim-bakimi/renders/draft-v1.mp4 --video /home/user/crm/ege-peyzaj-cim-bakimi/renders/draft-picture-v1.mp4 --limit
+pass 1: I=-22.51 LUFS  TP=-2.98 dBTP  LRA=5.50 LU  thresh=-32.75
+limit: +8.51 dB then a lookahead limiter at -3.5 dBFS -> I=-14.73 LUFS  TP=-3.50 dBTP  LRA=6.10 LU
+pass 2: normalization_type=linear  output I=-14.57  TP=-2.77  LRA=6.10
+re-measured from /home/user/crm/ege-peyzaj-cim-bakimi/renders/draft-v1.mp4: I=-14.6 LUFS  LRA=7.4 LU  true peak=-0.1 dBFS
+the encoded peak is 0.9 dB over: the limiter goes 1.2 dB lower and it is encoded again
+limit: +9.71 dB then a lookahead limiter at -4.7 dBFS -> I=-14.34 LUFS  TP=-4.70 dBTP  LRA=6.60 LU
+pass 2: normalization_type=linear  output I=-14.68  TP=-4.36  LRA=6.60
+re-measured from /home/user/crm/ege-peyzaj-cim-bakimi/renders/draft-v1.mp4: I=-14.7 LUFS  LRA=7.8 LU  true peak=-1.7 dBFS
+OK
+
+$ /usr/local/bin/python3 /home/user/crm/ege-peyzaj-cim-bakimi/tools/qc.py all /home/user/crm/ege-peyzaj-cim-bakimi/renders/draft-v1.mp4 0,2.5,6,10.5,13,16,20
+== info: /home/user/crm/ege-peyzaj-cim-bakimi/renders/draft-v1.mp4
+duration=20.000000
+size=4909809
+bit_rate=1963923
+codec_name=h264
+profile=High
+width=540
+height=960
+pix_fmt=yuv420p
+color_range=tv
+color_space=bt709
+color_transfer=bt709
+color_primaries=bt709
+r_frame_rate=24/1
+frames=480
+audio_codec_name=aac
+audio_sample_rate=48000
+audio_channels=2
+audio_bit_rate=272006
+== hook (first 2 s must move from frame 1; min mean 0.5, motion >= 0.02 in every 2 frames):
+  steps=47 mean=5.20 min=8.078 first_step=15.399
+  PASS
+  (also look at the strip: qc.py strip <video> 0 2 12, so grain or flicker is not mistaken for motion)
+== sheet: /home/user/crm/ege-peyzaj-cim-bakimi/review/qc-draft-v1/sheet.jpg (index: /home/user/crm/ege-peyzaj-cim-bakimi/review/qc-draft-v1/sheet-index.txt, one tile every 2s)
+== black intervals (>= 0.1 s, 98% of pixels dark):
+none
+== frozen intervals (>= 1.5 s):
+none
+(grain hides freezes from this detector; also check strips and duplicates)
+== exact duplicate consecutive frames:
+frames: 480, duplicates: 0
+== one-frame pops (a frame unlike both neighbours, 48 px grey): 0
+== repeated compositions (the same picture again, 6 s or more later; 32 px grey): 0 repeats, 0 s of 20
+== brightness (4 samples/s):
+samples: 80, mean L*: 61.0, min: 54.3, max: 68.2, very dark (L*<12): 0.0%
+== hard cuts (scene score > 0.3):
+cuts: 3
+  00:10.500
+  00:13.000
+  00:16.000
+== action per scene (camera move removed; flag when the median residual < 1.0 or < 30% of the total; 4 samples/s):
+     #1 00:00.00-00:02.50  residual  1.90  total  3.81  ok
+     #2 00:02.50-00:06.00  residual  1.22  total  1.22  ok
+     #3 00:06.00-00:10.50  residual  1.18  total  3.49  ok
+     #4 00:10.50-00:13.00  residual  1.19  total  2.20  ok
+     #5 00:13.00-00:16.00  residual  1.27  total  1.27  ok
+     #6 00:16.00-00:20.00  residual  0.48  total  0.48  CHECK: nothing moves
+  1 scene(s) flagged; look at their strips (qc.py strip) and give each an action
+== loudness (EBU R128, true peak):
+      I:         -14.7 LUFS
+      Threshold: -24.8 LUFS
+      LRA:         7.8 LU
+      Threshold: -35.2 LUFS
+      Peak:       -1.7 dBFS
+== silences (< -50 dB, >= 0.5 s):
+  none
+targets for web: I = -14 LUFS (+/-1), true peak <= -1 dBTP; every silence must be scripted
+== sound per scene (median -17.2 LUFS, harsh-band median -21.1 dB; flag > 3.0 LU or > 3.0 dB above):
+     #1 00:00.00-00:02.50   -17.8 LUFS  harsh -21.7 dB  ok
+     #2 00:02.50-00:06.00   -18.2 LUFS  harsh -22.5 dB  ok
+     #3 00:06.00-00:10.50   -18.4 LUFS  harsh -20.5 dB  ok
+     #4 00:10.50-00:13.00   -16.6 LUFS  harsh -14.5 dB  HARSH: 2-5 kHz +6.6 dB over the median
+     #5 00:13.00-00:16.00   -14.6 LUFS  harsh -15.9 dB  HARSH: 2-5 kHz +5.2 dB over the median
+     #6 00:16.00-00:20.00   -11.0 LUFS  harsh -24.5 dB  LOUDER by 6.2 LU
+  3 scene(s) flagged; listen to those seconds, then fix the level or soften the lead
+== spectrogram: /home/user/crm/ege-peyzaj-cim-bakimi/review/qc-draft-v1/spectrogram.png (look for persistent horizontal lines = pitched layers)
+== report: /home/user/crm/ege-peyzaj-cim-bakimi/review/qc-draft-v1/report.txt
+
+$ ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 /home/user/crm/ege-peyzaj-cim-bakimi/review/qc-draft-v1/sheet.jpg
+1948x1148
+
+$ ffmpeg -hide_banner -nostdin -loglevel error -y -i /home/user/crm/ege-peyzaj-cim-bakimi/review/qc-draft-v1/sheet.jpg -vf scale=1024:-2 -q:v 4 -update 1 /home/user/crm/ege-peyzaj-cim-bakimi/review/qc-draft-v1/sheet-small.jpg
+
+$ /usr/local/bin/python3 /home/user/crm/ege-peyzaj-cim-bakimi/tools/qc.py thumb /home/user/crm/ege-peyzaj-cim-bakimi/renders/draft-v1.mp4 768 14
+== thumb: /home/user/crm/ege-peyzaj-cim-bakimi/review/qc-draft-v1/thumb-draft-v1-14s-768.jpg (540x960)
+
+$ node /home/user/crm/ege-peyzaj-cim-bakimi/tools/capture.mjs --url film.html --text-check 0.5 --params w=540&h=960&shutter=0&weave=0&tone=0&textcheck=1
+[capture] renderer: canvas2d
+[capture] page: 540x960, 480 frames @ 24 fps
+[capture] text check: no overlapping lines, no line lost in its ground

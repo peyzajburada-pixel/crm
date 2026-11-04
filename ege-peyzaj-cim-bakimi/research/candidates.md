@@ -1,0 +1,7 @@
+# Candidates (Ege Peyzaj, 20 s, autumn-winter lawn care)
+
+1. **One line through the season** (s1: Semmering railway, time-lapse, a small kindness with a big echo): one overhead time-lapse of an Aegean villa garden from October to March in 20 s. The gardener's work leaves a single curving trail across the lawn like a mountain railway line; each "station" on it is one tip (raise the mowing height to 5 cm, aerate and overseed, rake leaves, water less in the rain). The last frame: the line has become a green spring lawn and the Ege Peyzaj mark.
+2. **The miniature garden** (s2: Ottoman miniature, a camera that never moves, mint and coral, documentary calm): a flat, patterned miniature-painting view of a whitewashed villa, olive tree and lawn. The camera never moves; seasons pass inside the frame (olive leaves fall, rain lines, a pale winter sun) while a small stylised gardener does the three tasks one after another. Short text fragments name each task.
+3. **Blades like stones** (s3: Axum stelae, slow motion only, toy plastic, zen calm): macro, slow motion, a toy-like diorama: grass blades stand like tall carved stelae; the gardener's gauge sets them at 5 cm, a seed falls between them, a raindrop lands. Calm, ends on the full lawn and the logo.
+4. **The literal one**: the gardener speaks to camera on a villa lawn and lists the autumn-winter tips, with subtitles and the logo.
+5. **Hands and tools**: close shots of a gardener's hands and tools (rake, aerator, seed spreader) on a villa lawn, a tip per tool, voice-over.

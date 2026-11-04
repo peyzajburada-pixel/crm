@@ -1,0 +1,6 @@
+FAILED: capture.mjs (exit 1)
+    at trailAt (file:///home/user/crm/ege-peyzaj-cim-bakimi/film.html?capture=1&w=1080&h=1920:217:26)
+    at file:///home/user/crm/ege-peyzaj-cim-bakimi/film.html?capture=1&w=1080&h=1920:435:13 (film.html?capture=1&w=1080&h=1920:217)
+    at openPage (file:///home/user/crm/ege-peyzaj-cim-bakimi/tools/capture.mjs:468:13)
+    at async file:///home/user/crm/ege-peyzaj-cim-bakimi/tools/capture.mjs:106:15
+log: logs/make-stills.log

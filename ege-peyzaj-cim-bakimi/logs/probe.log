@@ -1,0 +1,5 @@
+Error: page never defined window.READY / window.captureFrame
+Error: WebGL2 not available
+    at file:///home/user/crm/.claude/skills/cinecode/starter/index.html?capture=1:36:16 (index.html?capture=1:36)
+    at openPage (file:///home/user/crm/.claude/skills/cinecode/scripts/capture.mjs:468:13)
+    at async file:///home/user/crm/.claude/skills/cinecode/scripts/capture.mjs:106:15

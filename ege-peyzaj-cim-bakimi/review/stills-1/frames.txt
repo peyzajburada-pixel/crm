@@ -1,0 +1,10 @@
+file '/home/user/crm/ege-peyzaj-cim-bakimi/review/stills-1/000002.jpg'
+duration 1
+file '/home/user/crm/ege-peyzaj-cim-bakimi/review/stills-1/000024.jpg'
+duration 1
+file '/home/user/crm/ege-peyzaj-cim-bakimi/review/stills-1/000070.jpg'
+duration 1
+file '/home/user/crm/ege-peyzaj-cim-bakimi/review/stills-1/000336.jpg'
+duration 1
+file '/home/user/crm/ege-peyzaj-cim-bakimi/review/stills-1/000365.jpg'
+duration 1

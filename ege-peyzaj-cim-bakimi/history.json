@@ -1,0 +1,66 @@
+{
+ "deals": [
+  {
+   "category": "spark",
+   "seed": "2026-11-04:ege-peyzaj-cim-bakimi#1",
+   "dealt": [
+    "s1",
+    "s2",
+    "s3"
+   ],
+   "redeal_reason": null,
+   "pick": "s1",
+   "reason": "user picked 'Tek bir çizgi': the gardener's work trail curves across the villa lawn like a mountain railway, stations are tips",
+   "at": "2026-11-04T19:03",
+   "texts": {
+    "s1": "seed: Semmering railway · place: a lavender field · form: a time-lapse · medium: marble sculpture · era: the 1960s · engine: a small kindness with a big echo",
+    "s2": "seed: talchum · place: a newspaper printing hall · form: a camera that never moves · medium: Ottoman miniature · colour: mint and coral · tone: documentary calm",
+    "s3": "seed: Axum · place: Mars dunes · form: slow motion only · medium: toy plastic · colour: Bauhaus primaries · tone: zen calm"
+   },
+   "seeds": {
+    "s1": {
+     "name": "Semmering railway",
+     "fact": "railway line, Austria",
+     "link": "https://en.wikipedia.org/wiki/Semmering_Railway",
+     "pool": "place"
+    },
+    "s2": {
+     "name": "talchum",
+     "fact": "traditional type of dance with Korean masks worn by people",
+     "link": "https://en.wikipedia.org/wiki/Talchum",
+     "pool": "custom"
+    },
+    "s3": {
+     "name": "Axum",
+     "fact": "town in Tigray Region, Ethiopia, Ethiopia",
+     "link": "https://en.wikipedia.org/wiki/Axum",
+     "pool": "place"
+    }
+   }
+  },
+  {
+   "category": "look",
+   "seed": "2026-11-04:ege-peyzaj-cim-bakimi#1",
+   "dealt": [
+    "l1",
+    "l2",
+    "l3",
+    "l4",
+    "l5",
+    "l6"
+   ],
+   "redeal_reason": null,
+   "pick": null,
+   "reason": null,
+   "at": "2026-11-04T19:07",
+   "texts": {
+    "l1": "Akira Kurosawa: weather as drama, telephoto depth, movement",
+    "l2": "Blueprint: white line on blue",
+    "l3": "Pixel art: limited palette, crisp sprites",
+    "l4": "Abbas Kiarostami: long car windows, landscapes, simplicity",
+    "l5": "Ralph McQuarrie: matte-painted space opera",
+    "l6": "Chris Ware: diagrams, grids, melancholy"
+   }
+  }
+ ]
+}
